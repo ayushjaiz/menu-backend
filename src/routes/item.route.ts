@@ -1,6 +1,6 @@
 import express from "express";
 import { createItem, editItem, getAllItems, getItem } from "../controllers/item.controller";
-import { validate } from "../utils/validators/validate";
+import { validate } from "../utils/validate";
 import { createItemValidator } from "../utils/validators/create-item-validator";
 import { authenticate } from "../middlewares/authenticate";
 

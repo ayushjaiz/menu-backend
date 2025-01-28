@@ -1,7 +1,7 @@
 import express from "express";
 import { createSubcategory, editSubcategory, getAllSubcategories, getSubcategory } from "../controllers/subcategory.controller";
 import { createSubcategoryValidator } from "../utils/validators/create-subcategory-validator";
-import { validate } from "../utils/validators/validate";
+import { validate } from "../utils/validate";
 import { editSubcategoryValidator } from "../utils/validators/edit-subactegory-validator";
 import { authenticate } from "../middlewares/authenticate";
 
