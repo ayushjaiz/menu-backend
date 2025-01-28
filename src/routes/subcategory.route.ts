@@ -3,11 +3,12 @@ import { createSubcategory, editSubcategory, getAllSubcategories, getSubcategory
 import { createSubcategoryValidator } from "../utils/validators/create-subcategory-validator";
 import { validate } from "../utils/validators/validate";
 import { editSubcategoryValidator } from "../utils/validators/edit-subactegory-validator";
+import { authenticate } from "../middlewares/authenticate";
 
 const router = express.Router();
 
-router.post("/create", validate(createSubcategoryValidator), createSubcategory);
-router.patch("/edit/:id", validate(editSubcategoryValidator), editSubcategory);
+router.post("/create", authenticate, validate(createSubcategoryValidator), createSubcategory);
+router.patch("/edit/:id", authenticate, validate(editSubcategoryValidator), editSubcategory);
 
 router.get("/", getAllSubcategories);
 router.get("/:identifier", getSubcategory);

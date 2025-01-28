@@ -3,12 +3,13 @@ import { createCategory, editCategory, getAllCategories, getCategory, getItemsUn
 import { createCategoryValidator } from "../utils/validators/create-category-validator";
 import { validate } from "../utils/validators/validate";
 import { editCategoryValidator } from "../utils/validators/edit-category-validator";
+import { authenticate } from "../middlewares/authenticate";
 // import { rateLimiter } from "../middlewares/rateLimiter";
 
 const router = express.Router();
 
-router.post("/create", validate(createCategoryValidator), createCategory);
-router.patch("/edit/:id", validate(editCategoryValidator), editCategory);
+router.post("/create", authenticate, validate(createCategoryValidator), createCategory);
+router.patch("/edit/:id", authenticate, validate(editCategoryValidator), editCategory);
 
 router.get("/:identifier", getCategory);
 router.get("/", getAllCategories);

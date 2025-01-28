@@ -1,24 +1,12 @@
-// import express from "express";
-// import { register, login, logout } from "../controllers/authController";
-// import { rateLimiter } from "../middlewares/rateLimiter";
-
-// const router = express.Router();
-
-// router.post("/register", rateLimiter({ windowInSeconds: 60, maxRequests: 10 }), register);
-// router.post("/login", rateLimiter({ windowInSeconds: 60, maxRequests: 5 }), login);
-// router.post("/logout", logout);
-
-// export default router;
-
 import express from "express";
-// import { register, login, logout } from "../controllers/authController";
+import { loginUser, registerUser, logoutUser } from "../controllers/auth.controller";
 // import { rateLimiter } from "../middlewares/rateLimiter";
 
 const router = express.Router();
 
-// router.post("/register", register);
-// router.post("/login", login);
-// router.post("/logout", logout);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.post("/logout", logoutUser);
 
 export default router;
 

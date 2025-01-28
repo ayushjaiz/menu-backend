@@ -15,7 +15,7 @@ app.get('/', (_, res) => {
     res.send('Health Check')
 })
 
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/subcategory", subcategoryRoutes);
 app.use("/api/item", itemRoutes);
