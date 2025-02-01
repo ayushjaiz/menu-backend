@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "73d6f986-0eb6-4bd6-bbe2-7f2b56328119",
+		"name": "menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25067591"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Burger",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Delicious pizza at low cost",
+									"type": "text"
+								},
+								{
+									"key": "tax_applicability",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "tax_type",
+									"value": "GST",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/category/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Burger",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Delicious pizza at low cost",
+									"type": "text"
+								},
+								{
+									"key": "tax_applicability",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "tax_type",
+									"value": "GST",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/category/edit/67994da6ed8fb4dfad8200d6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"edit",
+								"67994da6ed8fb4dfad8200d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get subcategory under category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/67994e8f15f1384e75b6d3fb/subcategory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"67994e8f15f1384e75b6d3fb",
+								"subcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get subcategory under category Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/67994e8f15f1384e75b6d3fb/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"67994e8f15f1384e75b6d3fb",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/67994da6ed8fb4dfad8200d6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"67994da6ed8fb4dfad8200d6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "item",
+			"item": [
+				{
+					"name": "create item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Aloo Tikki Burger",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "enjoy the crust of burger",
+									"type": "text"
+								},
+								{
+									"key": "tax_applicability",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "base_amount",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "subcategory_id",
+									"value": "67995b457a8fe869f41b1531",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit item",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Aloo Tikki Burger",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "enjoy the crust of burger",
+									"type": "text"
+								},
+								{
+									"key": "tax_applicability",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "base_amount",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "subcategory_id",
+									"value": "67995b457a8fe869f41b1531",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get an item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/item/67995e88fff2aaae34fb2caa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"67995e88fff2aaae34fb2caa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subcategory",
+			"item": [
+				{
+					"name": "create subcategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Veg Pizza",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Delicious pizza at low cost",
+									"type": "text"
+								},
+								{
+									"key": "tax_applicability",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "tax_type",
+									"value": "GST",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "67994e8f15f1384e75b6d3fb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/subcategory/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subcategory",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit subcategory",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Veg Pizza",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Delicious pizza at low cost",
+									"type": "text"
+								},
+								{
+									"key": "tax_applicability",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "tax_type",
+									"value": "GST",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "67994e8f15f1384e75b6d3fb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/subcategory/edit/67995b457a8fe869f41b1531",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subcategory",
+								"edit",
+								"67995b457a8fe869f41b1531"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all subcategories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/subcategory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a subcategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/subcategory/67995b457a8fe869f41b1531",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subcategory",
+								"67995b457a8fe869f41b1531"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ayush45aj@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ayush12@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ayush45aj@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ayush12@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000/api",
+			"type": "string"
+		}
+	]
+}

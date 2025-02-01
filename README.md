@@ -1,6 +1,6 @@
-# RBAC
+# RESTAURANT MENU
 
-## The RBAC (Role-Based Access Control) project focuses on managing and enforcing access control in applications by assigning roles to users and associating permissions with those roles. The app uses Postgres as databse with Prisma as ORM. Redis is employed to implement a rate-limiting mechanism to prevent DDoS and bruteforce attack.
+## This project focuses on managing the menu of a restaurant. The app uses Nodejs.js fpr server side developemnt written in typescript. This uses uses MongoDB as databse.
 
 ## Table of Contents
 
@@ -13,21 +13,21 @@
 - [Development Choices](#development-choices)
 - [Deployment](#deployment)
 - [Acknowledgements](#acknowledgements)
+- [Answers for the Assignment](#answers-for-the-assignment)
 
 ---
 
 ## Project Features
 
 - **Authentication**: Implement secure user authentication using JWT
-- **Access Control**: Enforce role-based restrictions across application endpoints to ensure secure operation.
-- **Rate Limiting**: Prevent misuse by limiting request to API endpoint.
+- **Managing Menu**: User can add category, subcategory and item to their menu. Morever, it also supports edit and delete functionalities.
 
 ---
 
 ## Tech Stack
 
 - **Backend**: NodeJs, Express, Typescript
-- **Database**: Postgres, Redis
+- **Database**: MongDB
 
 ---
 
@@ -39,7 +39,6 @@
 - **typescript**: Used to write TypeScript code.
 - **ts-node**: Execute typescript code.
 - **jsonwebtoken**: Implement authentication and role based access control
-- **redis**: Implement rate limiter mechanism.
 
 ---
 
@@ -48,20 +47,19 @@
 ### Prerequisites
 
 - NodeJS
-- Postgres
-- Redis
+- MongoDB
 
 ### Environment Variables
 
 - Create a `.env` file in the backend directory and copy the content from `.env.example` into it.
-- Get Postgres and Redis Dtabase url
+- Get MongoDb url
 
 ### Steps
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/ayushjaiz/rbac-project
-   cd rag-chatbot
+   git clone hhttps://github.com/ayushjaiz/menu-backend
+   cd menu-backend
    ```
 2. **Install dependencies:**
    ```bash
@@ -72,133 +70,6 @@
    npm run build
    npm run start
    ```
-
----
-
-## API Endpoints and Sample Requests
-
-### POST `/api/auth/register`
-
-Register as a user, admin or moderator
-
-#### Request:
-
-```http
-POST /api/auth/register
-```
-
-#### Body
-
-```json
-{
-  "email": "ayush301aj@gmail.com",
-  "password": "12345"
-}
-```
-
-#### Response:
-
-```json
-{
-  "message": "User registered successfully",
-  "user": {
-    "email": "ayush301aj@gmail.com",
-    "createdAt": "2024-12-03T14:22:39.012Z",
-    "role": "USER"
-  }
-}
-```
-
-### POST `/api/auth/login`
-
-Login route
-
-#### Request:
-
-```http
-POST /api/auth/login
-```
-
-#### Body
-
-```json
-{
-  "email": "ayush301aj@gmail.com",
-  "password": "12345"
-}
-```
-
-#### Response:
-
-```json
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMjM1OTAxLCJleHAiOjE3MzMyMzk1MDF9.cslgOSMg2_MA30FgZwqekVgVeKxebkjEtbnNSOx_X1I",
-  "user": {
-    "id": 10,
-    "email": "ayush301aj@gmail.com",
-    "role": "USER"
-  }
-}
-```
-
-### GET `/api/profile`
-
-Access profile
-
-#### Request:
-
-```http
-GET /api/profile
-```
-
-#### Response:
-
-```json
-{
-  "message": "User Profile",
-  "user": {
-    "email": "ayush301aj@gmail.com",
-    "createdAt": "2024-12-03T14:22:39.012Z",
-    "role": "USER"
-  }
-}
-```
-
-### GET `/api/admin-dashboard`
-
-Access admin dashboard
-
-#### Request:
-
-```http
-POST /api/admin-dashboard
-```
-
-#### Response:
-
-```json
-{
-  "message": "Forbidden: Insufficient permissions"
-}
-```
-
-### GET `/api/moderator-dashboard`
-
-Access moderator dashboard
-
-#### Request:
-
-```http
-POST /api/moderator-dashboard
-```
-
-#### Response:
-
-```json
-{
-  "message": "Forbidden: Insufficient permissions"
-}
-```
 
 ---
 
@@ -216,16 +87,16 @@ POST /api/moderator-dashboard
 - Type security
 - Faster code development
 
-### Why Redis?
+### Why MongoDB?
 
-- In memory database
-- Faster operations
+- Flexibility to accomodate changes in schema
+- Easy documentation
 
 ---
 
 ## Deployment
 
-This app is deployed on render: https://rbac-t47d.onrender.com
+This app is deployed on render: https://menu-backend-71n6.onrender.com
 
 ---
 
@@ -234,5 +105,31 @@ This app is deployed on render: https://rbac-t47d.onrender.com
 This project was completed with the assistance of various online resources. I utilized the following tools and sources to support the development of this application:
 
 - Google + Stack Overflow - for bugs and documentation of libraries
-- Redis docs
-- Some youtube tutorials understanding rate limiter
+- MongoDb docs
+
+
+## Answers for the Assignment
+
+### Which database have you chosen and why?
+
+I have chosen MongoDB because:
+
+- It provides a flexible schema, which can accomodate changes according to later requirements.
+- It offers high scalability and fast read/write operations, which are useful for menu-based applications.
+
+### Three things that I learned from this assignment
+
+- Implementing CRUD operations with proper API design.
+- Schema designing which can scale.
+- Code modularity. This repo features code division into routes, controllers and database layer.
+
+
+### What was the most difficult part of the assignment?
+
+- Designing the good schema and validations
+
+
+### What would you have done differently given more time?
+
+- Add pagination and filtering for better performance with large datasets.
+- Set up a caching mechanism (Redis) to improve API response times.
