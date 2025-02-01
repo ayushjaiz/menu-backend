@@ -133,3 +133,7 @@ I have chosen MongoDB because:
 
 - Add pagination and filtering for better performance with large datasets.
 - Set up a caching mechanism (Redis) to improve API response times.
+
+## Video explanation
+
+https://www.loom.com/share/852ccb9306934720a24f18bef1e5ad9a?sid=23796a51-4705-4da9-ba51-c86612a9fe52
